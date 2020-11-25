@@ -5,14 +5,14 @@ const imageSlider = (function() {
     // advances imageSlider to the next image
     const imageSlides = document.querySelector('.very-wide');
     currentSlide += 1;
-    imageSlides.style.transform = `translate(-${currentSlide * 120}%)`;
+    imageSlides.style.transform = `translate(-${currentSlide * 100}vw)`;
   }
 
   function previous() {
     // reverts imageSlider back to the previous image
     const imageSlides = document.querySelector('.very-wide');
     currentSlide -= 1;
-    imageSlides.style.transform = `translate(-${(currentSlide) * 120}%)`;
+    imageSlides.style.transform = `translate(-${(currentSlide) * 100}vw)`;
   }
 
   document.querySelector('.arrow.right').addEventListener('click', next);
