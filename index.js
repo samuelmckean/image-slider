@@ -1,11 +1,15 @@
 const imageSlider = (function() {
   let currentSlide = 0;
+  const numOfImages = document.querySelectorAll('img').length;
 
   // advances imageSlider to the next image
   function next() {
-    const imageSlides = document.querySelector('.very-wide');
-    currentSlide += 1;
-    imageSlides.style.transform = `translate(-${currentSlide * 100}vw)`;
+    // prevent from sliding past the last image
+    if (currentSlide !== numOfImages - 1) {
+      const imageSlides = document.querySelector('.very-wide');
+      currentSlide += 1;
+      imageSlides.style.transform = `translate(-${currentSlide * 100}vw)`;
+    }
   }
 
   // reverts imageSlider back to the previous image
