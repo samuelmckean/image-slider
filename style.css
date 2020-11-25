@@ -64,18 +64,19 @@ img {
   margin: 0.5rem;
 }
 
-.nav-dots .empty {
+.nav-dots .border nav {
   width: 2rem;
   height: 2rem;
   border-radius: 2rem;
   background-color: gray;
   opacity: 0;
+  transition: opacity 500ms ease-in-out;
 }
 
-.nav-dots .filled {
+.nav-dots .border .filled {
   width: 2rem;
   height: 2rem;
   border-radius: 2rem;
   background-color: gray;
-  transition: opacity 500ms ease-in-out;
+  opacity: 1;
 }
