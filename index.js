@@ -1,15 +1,16 @@
 const imageSlider = (function() {
   let currentSlide = 0;
 
+  // advances imageSlider to the next image
   function next() {
-    // advances imageSlider to the next image
     const imageSlides = document.querySelector('.very-wide');
     currentSlide += 1;
     imageSlides.style.transform = `translate(-${currentSlide * 100}vw)`;
   }
 
+  // reverts imageSlider back to the previous image
   function previous() {
-    // reverts imageSlider back to the previous image
+    
     const imageSlides = document.querySelector('.very-wide');
     currentSlide -= 1;
     imageSlides.style.transform = `translate(-${(currentSlide) * 100}vw)`;
