@@ -25,6 +25,9 @@
     "eslint-plugin-react-hooks": "^4.0.0"
   },
   "eslintConfig": {
-    "extends": "airbnb"
+    "extends": "airbnb",
+    "env": {
+      "browser": true
+    }
   }
 }
