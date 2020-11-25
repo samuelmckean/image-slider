@@ -1,6 +1,22 @@
-const imageSlider = (function() {
+(function imageSlider() {
   let currentSlide = 0;
   const numOfImages = document.querySelectorAll('img').length;
+
+  // creates navigation dots for the number of images
+  function createNavigationDots() {
+    const navDots = document.querySelector('div.nav-dots');
+    for (let i = 0; i < numOfImages; i += 1) {
+      const navDot = document.createElement('div');
+      if (i === currentSlide) {
+        navDot.classList.add('filled');
+      } else {
+        navDot.classList.add('empty');
+      }
+      navDots.append(navDot);
+    }
+  }
+
+  createNavigationDots();
 
   // advances imageSlider to the next image
   function next() {
