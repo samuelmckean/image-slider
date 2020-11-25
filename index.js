@@ -35,6 +35,8 @@
       // add filled class to new current slide
       navDots.item(currentSlide).firstChild.classList.add('filled');
     }
+    // add a timeout which advances the slides every 5 seconds
+    setTimeout(next, 5000);
   }
 
   // reverts imageSlider back to the previous image
@@ -54,4 +56,6 @@
   // wire up event listeners on the left and right arrows
   document.querySelector('.arrow.right').addEventListener('click', next);
   document.querySelector('.arrow.left').addEventListener('click', previous);
+  // add a timeout which advances the slides every 5 seconds
+  setTimeout(next, 5000);
 }());
