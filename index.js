@@ -4,7 +4,7 @@
 
   // creates navigation dots for the number of images
   function createNavigationDots() {
-    const navDots = document.querySelector('div.nav-dots');
+    const navDots = document.querySelector('.nav-dots');
     for (let i = 0; i < numOfImages; i += 1) {
       const navDotBorder = document.createElement('div');
       navDotBorder.classList.add('border');
@@ -13,22 +13,27 @@
         navDotInner.classList.add('filled');
         navDotBorder.append(navDotInner);
       } else {
-        navDotInner.classList.add('empty');
         navDotBorder.append(navDotInner);
       }
       navDots.append(navDotBorder);
     }
+    // return a live HTMLCollection of the border nav-dots divs
+    return document.getElementsByClassName('border');
   }
 
-  createNavigationDots();
+  const navDots = createNavigationDots();
 
   // advances imageSlider to the next image
   function next() {
     // prevent from sliding past the last image
     if (currentSlide !== numOfImages - 1) {
       const imageSlides = document.querySelector('.very-wide');
+      // remove filled class from current slide
+      navDots.item(currentSlide).firstChild.classList.remove('filled');
       currentSlide += 1;
       imageSlides.style.transform = `translate(-${currentSlide * 100}vw)`;
+      // add filled class to new current slide
+      navDots.item(currentSlide).firstChild.classList.add('filled');
     }
   }
 
@@ -37,8 +42,12 @@
     // don't move to the left if the current slide is already 0
     if (currentSlide !== 0) {
       const imageSlides = document.querySelector('.very-wide');
+      // remove filled class from current slide
+      navDots.item(currentSlide).firstChild.classList.remove('filled');
       currentSlide -= 1;
       imageSlides.style.transform = `translate(-${(currentSlide) * 100}vw)`;
+      // add filled class to new current slide
+      navDots.item(currentSlide).firstChild.classList.add('filled');
     }
   }
 
