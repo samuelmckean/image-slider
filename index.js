@@ -6,13 +6,17 @@
   function createNavigationDots() {
     const navDots = document.querySelector('div.nav-dots');
     for (let i = 0; i < numOfImages; i += 1) {
-      const navDot = document.createElement('div');
+      const navDotBorder = document.createElement('div');
+      navDotBorder.classList.add('border');
+      const navDotInner = document.createElement('div');
       if (i === currentSlide) {
-        navDot.classList.add('filled');
+        navDotInner.classList.add('filled');
+        navDotBorder.append(navDotInner);
       } else {
-        navDot.classList.add('empty');
+        navDotInner.classList.add('empty');
+        navDotBorder.append(navDotInner);
       }
-      navDots.append(navDot);
+      navDots.append(navDotBorder);
     }
   }
 
