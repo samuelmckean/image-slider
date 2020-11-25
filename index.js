@@ -10,10 +10,12 @@ const imageSlider = (function() {
 
   // reverts imageSlider back to the previous image
   function previous() {
-    
-    const imageSlides = document.querySelector('.very-wide');
-    currentSlide -= 1;
-    imageSlides.style.transform = `translate(-${(currentSlide) * 100}vw)`;
+    // don't move to the left if the current slide is already 0
+    if (currentSlide !== 0) {
+      const imageSlides = document.querySelector('.very-wide');
+      currentSlide -= 1;
+      imageSlides.style.transform = `translate(-${(currentSlide) * 100}vw)`;
+    }
   }
 
   document.querySelector('.arrow.right').addEventListener('click', next);
