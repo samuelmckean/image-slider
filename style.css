@@ -54,24 +54,28 @@ img {
   bottom: 1rem;
 }
 
-.nav-dots .empty {
+.nav-dots .border {
   width: 2rem;
   height: 2rem;
-  border-radius: 1rem;
+  border-radius: 2rem;
   border-style: solid;
   border-width: 0.5rem;
   border-color: gray;
   margin: 0.5rem;
 }
 
+.nav-dots .empty {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 2rem;
+  background-color: gray;
+  opacity: 0;
+}
+
 .nav-dots .filled {
   width: 2rem;
   height: 2rem;
-  border-radius: 1rem;
-  border-style: solid;
-  border-width: 0.5rem;
-  border-color: gray;
-  margin: 0.5rem;
+  border-radius: 2rem;
   background-color: gray;
-  transition: background-color;
+  transition: opacity 500ms ease-in-out;
 }
