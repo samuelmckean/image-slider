@@ -46,3 +46,32 @@ img {
   max-height: 80vh;
   margin: 1rem 15vw;
 }
+
+.nav-dots {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  bottom: 1rem;
+}
+
+.nav-dots .empty {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+  border-style: solid;
+  border-width: 0.5rem;
+  border-color: gray;
+  margin: 0.5rem;
+}
+
+.nav-dots .filled {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+  border-style: solid;
+  border-width: 0.5rem;
+  border-color: gray;
+  margin: 0.5rem;
+  background-color: gray;
+  transition: background-color;
+}
