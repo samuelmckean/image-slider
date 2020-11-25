@@ -8,6 +8,7 @@ body {
   display: inline-block;
   padding: 1rem;
   opacity: 1;
+  z-index: 1;
 }
 
 .arrow:hover {
@@ -32,15 +33,16 @@ body {
 
 .very-wide {
   white-space: nowrap;
-  overflow-x: hidden;
+  transition: transform 500ms ease-in-out;
 }
 
 .container {
-  width: 80vw;
+  width: 90vw;
+  overflow-x: hidden;
 }
 
 img {
-  max-width: 80vw;
+  width: 70vw;
   max-height: 80vh;
-  margin: 5rem;
+  margin: 1rem 15vw;
 }
