@@ -51,6 +51,7 @@
     }
   }
 
+  // wire up event listeners on the left and right arrows
   document.querySelector('.arrow.right').addEventListener('click', next);
   document.querySelector('.arrow.left').addEventListener('click', previous);
 }());
