@@ -23,6 +23,27 @@
 
   const navDots = createNavigationDots();
 
+  // hides the left and right arrows accordingly
+  function hideArrows() {
+    // hide back arrow if on the first slide
+    const leftArrow = document.querySelector('.arrow.left');
+    if (currentSlide === 0) {
+      leftArrow.classList.add('hidden');
+    } else {
+      leftArrow.classList.remove('hidden');
+    }
+    // hide next arrow if at the end of slideshow
+    const rightArrow = document.querySelector('.arrow.right');
+    if (currentSlide === numOfImages - 1) {
+      rightArrow.classList.add('hidden');
+    } else {
+      rightArrow.classList.remove('hidden');
+    }
+  }
+
+  // call fucntion to hide the left arrow at the start
+  hideArrows();
+
   // advances imageSlider to the next image
   function next() {
     // prevent from sliding past the last image
@@ -35,10 +56,7 @@
       // add filled class to new current slide
       navDots.item(currentSlide).firstChild.classList.add('filled');
     }
-    // hide next arrow if at the end of slideshow
-    if (currentSlide === numOfImages - 1) {
-      document.querySelector('.arrow.right').classList.add('hidden');
-    }
+    hideArrows();
     // add a timeout which advances the slides every 5 seconds
     setTimeout(next, 5000);
   }
@@ -55,6 +73,7 @@
       // add filled class to new current slide
       navDots.item(currentSlide).firstChild.classList.add('filled');
     }
+    hideArrows();
   }
 
   // wire up event listeners on the left and right arrows
