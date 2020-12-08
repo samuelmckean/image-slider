@@ -35,6 +35,10 @@
       // add filled class to new current slide
       navDots.item(currentSlide).firstChild.classList.add('filled');
     }
+    // hide next arrow if at the end of slideshow
+    if (currentSlide === numOfImages - 1) {
+      document.querySelector('.arrow.right').classList.add('hidden');
+    }
     // add a timeout which advances the slides every 5 seconds
     setTimeout(next, 5000);
   }

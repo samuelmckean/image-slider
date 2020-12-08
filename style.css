@@ -17,6 +17,12 @@ body {
   transition: opacity 100ms ease-in-out;
 }
 
+.arrow.hidden {
+  cursor: default;
+  opacity: 0;
+  transition: opacity 100ms ease-in-out;
+}
+
 .right {
   transform: rotate(-45deg);
   position: fixed;
