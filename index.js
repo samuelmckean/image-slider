@@ -1,6 +1,7 @@
 (function imageSlider() {
   let currentSlide = 0;
   const numOfImages = document.querySelectorAll('img').length;
+  let interval;
 
   // creates navigation dots for the number of images
   function createNavigationDots() {
@@ -46,6 +47,8 @@
 
   // advances imageSlider to the next image
   function next() {
+    // cancel interval and create a new one
+    clearInterval(interval);
     // prevent from sliding past the last image
     if (currentSlide !== numOfImages - 1) {
       const imageSlides = document.querySelector('.very-wide');
@@ -57,10 +60,12 @@
       navDots.item(currentSlide).firstChild.classList.add('filled');
     }
     hideArrows();
+    interval = setInterval(next, 5000);
   }
 
   // reverts imageSlider back to the previous image
   function previous() {
+    clearInterval(interval);
     // don't move to the left if the current slide is already 0
     if (currentSlide !== 0) {
       const imageSlides = document.querySelector('.very-wide');
@@ -78,5 +83,5 @@
   document.querySelector('.arrow.right').addEventListener('click', next);
   document.querySelector('.arrow.left').addEventListener('click', previous);
   // add an interval which advances the slides every 5 seconds
-  setInterval(next, 5000);
+  interval = setInterval(next, 5000);
 }());
